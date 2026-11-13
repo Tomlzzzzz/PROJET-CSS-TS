@@ -1,0 +1,69 @@
+/* Layer base : styles des éléments HTML, sans classe. */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Les ancres ne passent pas sous l'en-tête collant */
+    scroll-padding-block-start: var(--header-offset);
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+  }
+
+  /* Spécificité nulle : facile à surcharger par une classe */
+  :where(h1, h2, h3) {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  p {
+    max-inline-size: 65ch;
+  }
+
+  :is(time, small) {
+    font-family: var(--font-meta);
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration-color: var(--color-link-decoration);
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-thickness var(--duration-hover) var(--ease-default);
+
+    &:hover {
+      text-decoration-thickness: 0.3em;
+    }
+  }
+
+  :focus-visible {
+    outline: var(--border-strong) solid var(--color-focus);
+    outline-offset: var(--focus-offset);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+}

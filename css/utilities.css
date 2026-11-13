@@ -1,0 +1,26 @@
+/* Layer utilities : dernier layer, gagne sans !important. */
+
+@layer utilities {
+  .u-visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Coupe toutes les animations et transitions du site */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation: none;
+      transition: none;
+    }
+  }
+}

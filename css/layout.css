@@ -1,0 +1,178 @@
+/* Layer layout : mise en page mobile-first, élargie à partir de 48rem. */
+
+@layer layout {
+  /* Conteneurs */
+  :is(.container, .section) {
+    inline-size: min(100% - 2 * var(--page-gutter), var(--size-container));
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .section__intro {
+    color: var(--color-text-muted);
+  }
+
+  /* En-tête */
+  .site-header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    background-color: var(--color-surface);
+    border-block-end: var(--border-strong) solid var(--color-border);
+
+    & .site-header__inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-tight) var(--gap-loose);
+      padding-block: var(--gap-tight);
+    }
+  }
+
+  .site-header__nav {
+    order: 3;
+    flex-basis: 100%;
+
+    @media (width >= 48rem) {
+      order: 0;
+      flex-basis: auto;
+      margin-inline-start: auto;
+    }
+  }
+
+  /* Hero — mobile : CTA avant le visuel ; desktop : visuel à droite */
+  .hero__inner {
+    display: grid;
+    gap: var(--gap-loose) var(--gap);
+    padding-block: var(--space-section);
+    grid-template-areas:
+      "titre"
+      "infos"
+      "cta"
+      "visuel";
+
+    @media (width >= 48rem) {
+      grid-template-columns: 3fr 2fr;
+      grid-template-areas:
+        "titre  visuel"
+        "infos  visuel"
+        "cta    visuel";
+      align-items: center;
+    }
+  }
+
+  .hero__title { grid-area: titre; }
+  .hero__infos { grid-area: infos; }
+  .hero__cta { grid-area: cta; }
+  .hero__visual { grid-area: visuel; }
+
+  /* Programme */
+  .programme {
+    display: grid;
+    gap: var(--gap) var(--gap-loose);
+    grid-template-areas:
+      "titre"
+      "intro"
+      "jour1"
+      "jour2";
+
+    @media (width >= 48rem) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "titre intro"
+        "jour1 jour2";
+      align-items: end;
+    }
+
+    & > h2 { grid-area: titre; }
+    & > .section__intro { grid-area: intro; }
+  }
+
+  .programme__day--1 { grid-area: jour1; }
+  .programme__day--2 { grid-area: jour2; }
+
+  /* Artistes */
+  .speakers {
+    display: grid;
+    gap: var(--gap-loose);
+  }
+
+  .speakers__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--col-min-card)), 1fr));
+    gap: var(--gap-loose) var(--gap);
+  }
+
+  /* Subgrid : 4 lignes partagées, contenus alignés d'une carte à l'autre. Pas de container-type ici : un conteneur ne peut pas être un subgrid */
+  .speakers__item {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    /* Sinon le subgrid hérite du grand écart de la liste */
+    row-gap: 0;
+
+    & > .card {
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+  }
+
+  /* Même carte dans deux conteneurs « card » de largeurs différentes (container query) */
+  .featured {
+    display: grid;
+    gap: var(--gap-loose) var(--gap);
+    align-items: start;
+
+    @media (width >= 48rem) {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .featured__item {
+    container: card / inline-size;
+  }
+
+  /* Billetterie */
+  .offers {
+    display: grid;
+    gap: var(--gap-loose);
+  }
+
+  .offers__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--col-min-offer)), 1fr));
+    gap: var(--gap-loose) var(--gap);
+    align-items: stretch;
+  }
+
+  /* FAQ */
+  .faq {
+    display: grid;
+    gap: var(--gap-loose);
+  }
+
+  .faq__list {
+    display: grid;
+    gap: var(--gap-tight);
+    max-inline-size: var(--size-reading);
+  }
+
+  /* Pied de page toujours sombre : color-scheme forcé localement */
+  .site-footer {
+    color-scheme: dark;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    padding-block: var(--space-section) var(--gap-loose);
+
+    & .site-footer__inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--col-min-footer)), 1fr));
+      gap: var(--gap-loose);
+    }
+  }
+}

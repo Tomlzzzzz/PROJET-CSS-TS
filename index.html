@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOUS-SOL — Festival de rap underground · 11 et 12 juin 2027 · Lille</title>
+  <meta name="description" content="SOUS-SOL, festival de rap underground français : deux nuits, deux niveaux d'un ancien parking souterrain de Lille, les 11 et 12 juin 2027.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#contenu" class="logo">
+        <span>Sous-sol</span>
+        <span class="logo__level" aria-hidden="true">-2</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Navigation principale">
+        <ul class="nav__list" role="list">
+          <li><a class="nav__link" href="#programme">Programme</a></li>
+          <li><a class="nav__link" href="#artistes">Artistes</a></li>
+          <li><a class="nav__link" href="#billetterie">Billetterie</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" class="u-visually-hidden">
+        <span class="theme-toggle__track" aria-hidden="true"></span>
+        <span>Thème<span class="u-visually-hidden"> : inverser clair et sombre</span></span>
+      </label>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="hero" aria-labelledby="hero-titre">
+      <div class="container hero__inner">
+        <h1 id="hero-titre" class="hero__title">
+          <span class="hero__kicker">Festival de rap underground · 3<sup>e</sup> édition</span>
+          Sous-sol
+        </h1>
+
+        <div class="hero__infos">
+          <p class="hero__meta">
+            <time datetime="2027-06-11">11</time> et <time datetime="2027-06-12">12 juin 2027</time>
+            · Parking des Tanneurs, Lille
+          </p>
+          <p>Deux nuits, deux niveaux d'un parking désaffecté, huit artistes qui ne passent pas
+            à la radio. Ici le son tape contre le béton, et tout le monde descend.</p>
+        </div>
+
+        <div class="hero__cta">
+          <a href="#billetterie" class="btn">Prendre mon pass</a>
+          <a href="#programme" class="btn btn--ghost">Voir le programme</a>
+        </div>
+
+        <div class="hero__visual level-sign" aria-hidden="true">
+          <div>
+            <p class="level-sign__label">Niveau</p>
+            <p class="level-sign__number">-2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <section id="programme" class="section programme" aria-labelledby="programme-titre">
+      <h2 id="programme-titre">Programme</h2>
+      <p class="section__intro">Deux scènes : le <strong>Niveau -1</strong>, ouvert sur la rampe d'accès, et le
+        <strong>Niveau -2</strong>, plus bas, plus sombre, plus fort. Ouverture des portes à 19 h.</p>
+
+      <div class="day programme__day programme__day--1">
+        <h3 class="day__title">Vendredi <time datetime="2027-06-11">11 juin</time></h3>
+        <ol class="day__list" role="list">
+          <li class="slot" id="slot-nadia-sillon">
+            <time class="slot__time" datetime="2027-06-11T19:30">19:30</time>
+            <p><span class="slot__title">Nadia Sillon</span> <span class="slot__stage">Niveau -1 · DJ set</span></p>
+          </li>
+          <li class="slot" id="slot-collectif-cave-59">
+            <time class="slot__time" datetime="2027-06-11T20:45">20:45</time>
+            <p><span class="slot__title">Collectif Cave 59</span> <span class="slot__stage">Niveau -1 · Live</span></p>
+          </li>
+          <li class="slot" id="slot-lila-vrac">
+            <time class="slot__time" datetime="2027-06-11T22:00">22:00</time>
+            <p><span class="slot__title">Lila Vrac</span> <span class="slot__stage">Niveau -2 · Live</span></p>
+          </li>
+          <li class="slot" id="slot-kaza-noir">
+            <time class="slot__time" datetime="2027-06-11T23:30">23:30</time>
+            <p><span class="slot__title">Kaza Noir</span> <span class="slot__stage">Niveau -2 · Live</span></p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="day programme__day programme__day--2">
+        <h3 class="day__title">Samedi <time datetime="2027-06-12">12 juin</time></h3>
+        <ol class="day__list" role="list">
+          <li class="slot" id="slot-open-mic-des-ateliers">
+            <time class="slot__time" datetime="2027-06-12T19:30">19:30</time>
+            <p><span class="slot__title">Open mic des ateliers</span> <span class="slot__stage">Niveau -1 · Scène ouverte</span></p>
+          </li>
+          <li class="slot" id="slot-dj-ferraille">
+            <time class="slot__time" datetime="2027-06-12T21:00">21:00</time>
+            <p><span class="slot__title">Dj Ferraille</span> <span class="slot__stage">Niveau -1 · DJ set</span></p>
+          </li>
+          <li class="slot" id="slot-moussa-beton">
+            <time class="slot__time" datetime="2027-06-12T22:15">22:15</time>
+            <p><span class="slot__title">Moussa Béton</span> <span class="slot__stage">Niveau -2 · Live</span></p>
+          </li>
+          <li class="slot" id="slot-grise-mine">
+            <time class="slot__time" datetime="2027-06-12T23:45">23:45</time>
+            <p><span class="slot__title">Grise Mine</span> <span class="slot__stage">Niveau -2 · Tête d'affiche</span></p>
+          </li>
+          <li class="slot" id="slot-tenebre-fm">
+            <time class="slot__time" datetime="2027-06-13T01:15">01:15</time>
+            <p><span class="slot__title">Ténèbre FM</span> <span class="slot__stage">Niveau -1 · DJ set de clôture</span></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="artistes" class="section speakers" aria-labelledby="artistes-titre">
+      <h2 id="artistes-titre">Artistes</h2>
+
+      <div class="featured">
+        <div class="featured__item">
+          <article class="card">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Grise%20Mine" alt="Portrait dessiné de Grise Mine" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Grise Mine</h3>
+              <p class="card__role">Duo · Bruxelles · Tête d'affiche</p>
+            </header>
+            <p class="card__bio">Deux voix qui se répondent sur des prods lentes et lourdes. Après trois mixtapes
+              sorties uniquement en cassette, Grise Mine vient clôturer la 3<sup>e</sup> édition sur le niveau le plus bas.</p>
+            <a class="card__link" href="#slot-grise-mine">Voir le passage de Grise Mine</a>
+          </article>
+        </div>
+
+        <div class="featured__item">
+          <article class="card card--tag">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Nadia%20Sillon" alt="Portrait dessiné de Nadia Sillon" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Nadia Sillon</h3>
+              <p class="card__role">Beatmakeuse · Lille · Révélation</p>
+            </header>
+            <p class="card__bio">Samples de jazz et basses saturées. Elle ouvre le festival avec un set construit uniquement à partir de disques chinés à Wazemmes.</p>
+            <a class="card__link" href="#slot-nadia-sillon">Voir le passage de Nadia Sillon</a>
+          </article>
+        </div>
+      </div>
+
+      <ul class="speakers__list" role="list">
+        <li class="speakers__item">
+          <article class="card">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Kaza%20Noir" alt="Portrait dessiné de Kaza Noir" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Kaza Noir</h3>
+              <p class="card__role">Rap · Roubaix</p>
+            </header>
+            <p class="card__bio">Textes secs, boom-bap à l'ancienne, zéro autotune. Son premier EP a été enregistré dans une cave du quartier de l'Épeule.</p>
+            <a class="card__link" href="#slot-kaza-noir">Voir le passage de Kaza Noir</a>
+          </article>
+        </li>
+        <li class="speakers__item">
+          <article class="card card--tag">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Lila%20Vrac" alt="Portrait dessiné de Lila Vrac" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Lila Vrac</h3>
+              <p class="card__role">Rap · Marseille</p>
+            </header>
+            <p class="card__bio">Un flow rapide, des refrains qui restent en tête. Elle raconte la ville vue depuis les derniers étages des tours, entre ironie et colère.</p>
+            <a class="card__link" href="#slot-lila-vrac">Voir le passage de Lila Vrac</a>
+          </article>
+        </li>
+        <li class="speakers__item">
+          <article class="card">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Dj%20Ferraille" alt="Portrait dessiné de Dj Ferraille" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Dj Ferraille</h3>
+              <p class="card__role">DJ · Lyon</p>
+            </header>
+            <p class="card__bio">Platines vinyles uniquement. Mélange de faces B introuvables et de ses propres instrus.</p>
+            <a class="card__link" href="#slot-dj-ferraille">Voir le passage de Dj Ferraille</a>
+          </article>
+        </li>
+        <li class="speakers__item">
+          <article class="card card--tag">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Moussa%20B%C3%A9ton" alt="Portrait dessiné de Moussa Béton" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Moussa Béton</h3>
+              <p class="card__role">Rap · Saint-Denis</p>
+            </header>
+            <p class="card__bio">Révélé par les open mics parisiens, il écrit des morceaux longs, presque parlés, qui prennent le temps de poser une histoire. Son album « Dalle » est sorti en autoproduction.</p>
+            <a class="card__link" href="#slot-moussa-beton">Voir le passage de Moussa Béton</a>
+          </article>
+        </li>
+        <li class="speakers__item">
+          <article class="card">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=Collectif%20Cave%2059" alt="Portrait dessiné de Collectif Cave 59" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Collectif Cave 59</h3>
+              <p class="card__role">Collectif · Lille</p>
+            </header>
+            <p class="card__bio">Six rappeurs et une beatmakeuse, réunis autour d'un studio associatif. Sur scène, ils ne sont jamais moins de cinq au micro.</p>
+            <a class="card__link" href="#slot-collectif-cave-59">Voir le passage de Collectif Cave 59</a>
+          </article>
+        </li>
+        <li class="speakers__item">
+          <article class="card card--tag">
+            <div class="card__media">
+              <img src="https://api.dicebear.com/10.x/notionists/svg?seed=T%C3%A9n%C3%A8bre%20FM" alt="Portrait dessiné de Ténèbre FM" width="200" height="200" loading="lazy">
+            </div>
+            <header class="card__header">
+              <h3 class="card__name">Ténèbre FM</h3>
+              <p class="card__role">DJ · Tourcoing</p>
+            </header>
+            <p class="card__bio">Radio pirate devenue duo de DJ. Ils ferment le festival avec deux heures de raretés du rap français des années 2000.</p>
+            <a class="card__link" href="#slot-tenebre-fm">Voir le passage de Ténèbre FM</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="billetterie" class="section offers" aria-labelledby="billetterie-titre">
+      <h2 id="billetterie-titre">Billetterie</h2>
+
+      <ul class="offers__list" role="list">
+        <li class="offer">
+          <h3>Pass 1 nuit</h3>
+          <p class="offer__price">29 € <small>/ personne</small></p>
+          <ul class="offer__features" role="list">
+            <li>Vendredi ou samedi, au choix</li>
+            <li>Accès aux deux niveaux</li>
+            <li>Bouchons d'oreilles offerts</li>
+          </ul>
+          <a class="btn btn--ghost" href="mailto:billetterie@sous-sol.example?subject=Pass%201%20nuit">Choisir le pass 1 nuit</a>
+        </li>
+        <li class="offer">
+          <p class="offer__badge">Le plus pris</p>
+          <h3>Pass 2 nuits</h3>
+          <p class="offer__price">49 € <small>/ personne</small></p>
+          <ul class="offer__features" role="list">
+            <li>Vendredi et samedi</li>
+            <li>File d'entrée prioritaire</li>
+            <li>Affiche sérigraphiée de l'édition</li>
+          </ul>
+          <a class="btn" href="mailto:billetterie@sous-sol.example?subject=Pass%202%20nuits">Choisir le pass 2 nuits</a>
+        </li>
+        <li class="offer">
+          <h3>Pass soutien</h3>
+          <p class="offer__price">75 € <small>/ personne</small></p>
+          <ul class="offer__features" role="list">
+            <li>Pass 2 nuits + t-shirt</li>
+            <li>Rencontre avec les artistes le samedi à 18 h</li>
+            <li>20 € reversés aux ateliers d'écriture du quartier</li>
+          </ul>
+          <a class="btn btn--ghost" href="mailto:billetterie@sous-sol.example?subject=Pass%20soutien">Choisir le pass soutien</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="faq" class="section faq" aria-labelledby="faq-titre">
+      <h2 id="faq-titre">Questions fréquentes</h2>
+
+      <div class="faq__list">
+        <details class="faq-item">
+          <summary>Y a-t-il du réseau au niveau -2 ?</summary>
+          <p>Très peu. Téléchargez votre billet avant d'arriver : il fonctionne hors connexion. Un point wifi est installé au niveau -1, près du bar.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Le festival est-il accessible en fauteuil roulant ?</summary>
+          <p>Oui. Les deux niveaux sont desservis par des ascenseurs, et une plateforme surélevée est réservée devant chaque scène. Signalez-le à l'achat pour bénéficier d'une place accompagnant gratuite.</p>
+        </details>
+        <details class="faq-item">
+          <summary>À partir de quel âge peut-on venir ?</summary>
+          <p>16 ans. Les mineurs de 16 et 17 ans doivent présenter une autorisation parentale signée à l'entrée.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Puis-je revendre mon billet ?</summary>
+          <p>Oui, uniquement via la bourse d'échange officielle, au prix d'achat. Le billet est alors renommé au nom du nouvel acheteur.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Peut-on sortir et revenir dans la soirée ?</summary>
+          <p>Oui, une seule fois par soirée, grâce au tampon posé sur la main à la sortie.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Le son est-il très fort ?</summary>
+          <p>Le volume respecte la limite légale de 102 dB, mais le béton résonne. Des bouchons d'oreilles sont distribués gratuitement à l'entrée et une zone calme est ouverte au niveau -1.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="hazard" aria-hidden="true"></div>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="footer-block">
+        <h2>Contact</h2>
+        <p>Association Niveau Moins Deux<br>
+          <a href="mailto:contact@sous-sol.example">contact@sous-sol.example</a></p>
+      </div>
+
+      <div class="footer-block">
+        <h2>Réseaux</h2>
+        <ul class="footer-social" role="list">
+          <li><a href="https://instagram.example/soussol.fest">Instagram</a></li>
+          <li><a href="https://soundcloud.example/soussol">SoundCloud</a></li>
+          <li><a href="https://youtube.example/@soussol">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-block">
+        <h2>Crédits</h2>
+        <p>Police Anton de Vernon Adams (licence SIL Open Font License, via Google Fonts).
+          Portraits générés avec DiceBear, style Notionists de Zoish (CC0). Décors CSS réalisés par le groupe.</p>
+      </div>
+
+      <p class="footer-legal">Événement fictif — projet étudiant, module CSS avancé, BUT MMI 3. Artistes, lieux et liens sont inventés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* Design tokens. Primitifs = valeurs brutes ; sémantiques = rôles, seuls utilisés par layout et components. */
+
+@layer base {
+  :root {
+    /* Primitifs */
+    --color-concrete-50: oklch(97% 0.004 90);
+    --color-concrete-100: oklch(93% 0.006 90);
+    --color-concrete-300: oklch(78% 0.006 90);
+    --color-concrete-400: oklch(66% 0.006 90);
+    --color-concrete-600: oklch(44% 0.008 90);
+    --color-asphalt-800: oklch(25% 0.008 260);
+    --color-asphalt-900: oklch(18% 0.008 260);
+    --color-asphalt-950: oklch(14% 0.006 260);
+    --color-yellow-400: oklch(86% 0.17 95);
+    --color-red-600: oklch(52% 0.2 28);
+    --color-white: oklch(100% 0 0);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    --radius-0: 0;
+    --radius-s: 0.125rem;
+
+    --border-2: 2px;
+    --border-3: 3px;
+
+    --offset-2: 2px;
+    --offset-4: 4px;
+    --offset-8: 8px;
+
+    --duration-150: 150ms;
+    --duration-300: 300ms;
+    --duration-900: 900ms;
+    --duration-1200: 1200ms;
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --font-family-anton: "Anton", Impact, "Arial Narrow", sans-serif;
+    --font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-family-mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+
+    /* Sémantiques — light-dark(clair, sombre), contrastes AA détaillés dans le README */
+    color-scheme: light dark;
+
+    --color-surface: light-dark(var(--color-concrete-100), var(--color-asphalt-900));
+    --color-surface-raised: light-dark(var(--color-concrete-50), var(--color-asphalt-800));
+    --color-text: light-dark(var(--color-asphalt-950), var(--color-concrete-50));
+    --color-text-muted: light-dark(var(--color-concrete-600), var(--color-concrete-300));
+    --color-border: light-dark(var(--color-asphalt-950), var(--color-concrete-400));
+    --color-accent: var(--color-yellow-400);
+    --color-on-accent: var(--color-asphalt-950);
+    --color-tag: var(--color-red-600);
+    --color-on-tag: var(--color-white);
+    /* Le jaune ne contraste pas sur fond clair : lien foncé + soulignement rouge */
+    --color-link: light-dark(var(--color-asphalt-950), var(--color-yellow-400));
+    --color-link-decoration: light-dark(var(--color-red-600), var(--color-yellow-400));
+    --color-focus: light-dark(var(--color-red-600), var(--color-yellow-400));
+
+    --font-display: var(--font-family-anton);
+    --font-body: var(--font-family-system);
+    --font-meta: var(--font-family-mono);
+
+    --font-size-small: clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+    --font-size-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-h3: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+    --font-size-h2: clamp(2rem, 1.4rem + 3vw, 3.75rem);
+    --font-size-h1: clamp(3.5rem, 1.5rem + 11vw, 10rem);
+    --font-size-display: clamp(5rem, 3rem + 12vw, 12rem);
+
+    --gap-tight: var(--space-2);
+    --gap: var(--space-4);
+    --gap-loose: var(--space-8);
+    --pad-control: var(--space-3) var(--space-6);
+    --pad-card: var(--space-6);
+    --page-gutter: var(--space-4);
+    --space-section: clamp(var(--space-12), 8vw, var(--space-16));
+
+    --radius-control: var(--radius-s);
+    --radius-card: var(--radius-0);
+    --border-ui: var(--border-2);
+    --border-strong: var(--border-3);
+    --focus-offset: var(--border-3);
+    --size-card-media: 12rem;
+    --size-container: 72rem;
+    --size-sign: 24rem;
+    --header-offset: 6rem;
+    --col-min-card: 16rem;
+    --col-min-offer: 17rem;
+    --col-min-footer: 14rem;
+    --hazard-height: 2rem;
+    --hazard-band: 1rem;
+    --size-reading: 48rem;
+    --target-min: 1.5rem;
+    --toggle-width: 3rem;
+    --toggle-height: 1.5rem;
+    --toggle-knob: 1rem;
+    --toggle-inset: 0.1875rem;
+    --cta-basis: 14rem;
+
+    --shadow-rest: var(--offset-4) var(--offset-4) 0 var(--color-border);
+    --shadow-press: var(--offset-2) var(--offset-2) 0 var(--color-border);
+    --shadow-lift: var(--offset-8) var(--offset-8) 0 var(--color-accent);
+    --move-press: var(--offset-2);
+    --move-pressed: var(--offset-4);
+    --move-lift: calc(-1 * var(--offset-4));
+
+    --pattern-hazard: repeating-linear-gradient(-45deg,
+      var(--color-accent) 0 1rem,
+      var(--color-on-accent) 1rem 2rem);
+
+    --duration-hover: var(--duration-150);
+    --duration-open: var(--duration-300);
+    --duration-intro: var(--duration-900);
+    --duration-neon: var(--duration-1200);
+    --ease-default: var(--ease-out);
+  }
+
+  /* Bascule CSS-only : la case inverse le thème du système */
+  :root:has(#theme-toggle:checked) {
+    color-scheme: dark;
+
+    @media (prefers-color-scheme: dark) {
+      color-scheme: light;
+    }
+  }
+}

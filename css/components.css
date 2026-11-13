@@ -1,0 +1,515 @@
+/* Layer components : composants nommés en BEM (.bloc__element--variante). */
+
+@layer components {
+  /* Lien d'évitement, visible au focus clavier */
+  .skip-link {
+    position: absolute;
+    inset-block-start: var(--gap-tight);
+    inset-inline-start: var(--gap-tight);
+    z-index: 20;
+    padding: var(--pad-control);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 700;
+    translate: 0 -200%;
+    transition: translate var(--duration-hover) var(--ease-default);
+
+    &:focus-visible {
+      translate: 0 0;
+    }
+  }
+
+  /* Logo et navigation */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-tight);
+    font-family: var(--font-display);
+    font-size: var(--font-size-h3);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+
+    & .logo__level {
+      padding-inline: var(--gap-tight);
+      background-color: var(--color-accent);
+      color: var(--color-on-accent);
+    }
+  }
+
+  .nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-tight) var(--gap);
+  }
+
+  .nav__link {
+    display: inline-block;
+    min-inline-size: var(--target-min);
+    text-align: center;
+    padding-block: var(--gap-tight);
+    font-family: var(--font-meta);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-text);
+    border-block-end: var(--border-strong) solid transparent;
+    transition: border-color var(--duration-hover) var(--ease-default);
+
+    &:hover {
+      border-color: var(--color-accent);
+    }
+  }
+
+  /* Bascule de thème : vraie case masquée, interrupteur dessiné */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-tight);
+    font-family: var(--font-meta);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:has(:checked) .theme-toggle__track::after {
+      translate: calc(var(--toggle-width) - var(--toggle-knob) - 2 * var(--toggle-inset) - 2 * var(--border-ui)) 0;
+      background-color: var(--color-accent);
+    }
+
+    &:has(:focus-visible) .theme-toggle__track {
+      outline: var(--border-strong) solid var(--color-focus);
+      outline-offset: var(--focus-offset);
+    }
+  }
+
+  .theme-toggle__track {
+    position: relative;
+    inline-size: var(--toggle-width);
+    block-size: var(--toggle-height);
+    border: var(--border-ui) solid var(--color-border);
+    background-color: var(--color-surface-raised);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block: var(--toggle-inset);
+      inset-inline-start: var(--toggle-inset);
+      inline-size: var(--toggle-knob);
+      background-color: var(--color-text);
+      transition: translate var(--duration-hover) var(--ease-default);
+    }
+  }
+
+  /* Bouton */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-tight);
+    padding: var(--pad-control);
+    border: var(--border-ui) solid var(--color-border);
+    border-radius: var(--radius-control);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: var(--shadow-rest);
+    transition:
+      translate var(--duration-hover) var(--ease-default),
+      box-shadow var(--duration-hover) var(--ease-default);
+
+    &:hover {
+      translate: var(--move-press) var(--move-press);
+      box-shadow: var(--shadow-press);
+    }
+
+    &:active {
+      translate: var(--move-pressed) var(--move-pressed);
+      box-shadow: none;
+    }
+  }
+
+  .btn--ghost {
+    background-color: var(--color-surface-raised);
+    color: var(--color-text);
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: var(--font-size-h1);
+    line-height: 0.85;
+    animation: descend var(--duration-intro) var(--ease-default);
+
+    & .hero__kicker {
+      display: block;
+      margin-block-end: var(--gap);
+      font-family: var(--font-meta);
+      font-size: var(--font-size-small);
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+    }
+  }
+
+  .hero__infos {
+    display: grid;
+    gap: var(--gap-tight);
+
+    & .hero__meta {
+      font-family: var(--font-meta);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    /* flex: 1 1 14rem — les boutons partagent la ligne, passent à la ligne sous 14rem */
+    & .btn {
+      flex: 1 1 var(--cta-basis);
+    }
+  }
+
+  /* Décor CSS : panneau de niveau « -2 » */
+  .level-sign {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    max-inline-size: var(--size-sign);
+    inline-size: 100%;
+    justify-self: center;
+    border: var(--border-strong) solid var(--color-border);
+    background:
+      var(--pattern-hazard) bottom / 100% var(--hazard-height) no-repeat,
+      var(--color-surface-raised);
+
+    & .level-sign__label {
+      font-family: var(--font-meta);
+      font-size: var(--font-size-small);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    & .level-sign__number {
+      font-family: var(--font-display);
+      font-size: var(--font-size-display);
+      line-height: 0.9;
+      animation: neon-on var(--duration-neon) linear;
+    }
+  }
+
+  .hazard {
+    block-size: var(--hazard-band);
+    background: var(--pattern-hazard);
+  }
+
+  /* Programme */
+  .day {
+    display: grid;
+    gap: var(--gap);
+    align-content: start;
+  }
+
+  .day__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--gap-tight) var(--gap);
+
+    & time {
+      font-size: var(--font-size-small);
+      color: var(--color-text-muted);
+    }
+  }
+
+  .day__list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--gap);
+  }
+
+  /* Subgrid : heures alignées sur les colonnes de la liste */
+  .slot {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: baseline;
+    padding-block: var(--gap);
+    border-block-start: var(--border-ui) dashed var(--color-border);
+
+    /* Ciblé par le lien d'une carte artiste (#slot-…) : créneau surligné */
+    &:target {
+      background-color: var(--color-surface-raised);
+      outline: var(--border-strong) solid var(--color-accent);
+    }
+
+    & .slot__time {
+      padding-inline: var(--gap-tight);
+      background-color: var(--color-accent);
+      color: var(--color-on-accent);
+      font-weight: 700;
+    }
+
+    & .slot__title {
+      font-weight: 700;
+    }
+
+    & .slot__stage {
+      display: block;
+      font-family: var(--font-meta);
+      font-size: var(--font-size-small);
+      color: var(--color-text-muted);
+    }
+  }
+
+  /* Carte artiste — pas de grid-template-rows ici : ce layer écraserait le subgrid */
+  .card {
+    display: grid;
+    align-content: start;
+    background-color: var(--color-surface-raised);
+    border: var(--border-ui) solid var(--color-border);
+    border-radius: var(--radius-card);
+    transition:
+      translate var(--duration-hover) var(--ease-default),
+      box-shadow var(--duration-hover) var(--ease-default);
+
+    &:hover,
+    /* Même effet au focus clavier du lien */
+    &:has(.card__link:focus-visible) {
+      translate: var(--move-lift) var(--move-lift);
+      box-shadow: var(--shadow-lift);
+    }
+  }
+
+  .card__media {
+    block-size: var(--size-card-media);
+    background-color: var(--color-accent);
+    border-block-end: var(--border-ui) solid var(--color-border);
+    overflow: hidden;
+
+    & img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+
+  .card--tag .card__media {
+    background-color: var(--color-tag);
+  }
+
+  .card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: flex-start;
+    justify-content: space-between;
+    gap: var(--gap-tight);
+    padding: var(--pad-card) var(--pad-card) 0;
+  }
+
+  .card__role {
+    font-family: var(--font-meta);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .card__bio {
+    padding-inline: var(--pad-card);
+    padding-block-start: var(--gap-tight);
+  }
+
+  .card__link {
+    justify-self: start;
+    margin: var(--gap) var(--pad-card) var(--pad-card);
+    font-weight: 700;
+  }
+
+  /* Container query : carte horizontale dans un conteneur large (30rem en dur : var() interdit dans une condition @container) */
+  @container card (inline-size > 30rem) {
+    .card {
+      grid-template-columns: minmax(var(--size-card-media), 2fr) 3fr;
+      grid-template-rows: auto auto 1fr;
+
+      & .card__media {
+        grid-row: 1 / -1;
+        block-size: auto;
+        min-block-size: var(--col-min-card);
+        border-block-end: 0;
+        border-inline-end: var(--border-ui) solid var(--color-border);
+      }
+
+      & .card__name {
+        font-size: var(--font-size-h2);
+      }
+    }
+  }
+
+  /* Billetterie */
+  .offer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--pad-card);
+    background-color: var(--color-surface-raised);
+    border: var(--border-ui) solid var(--color-border);
+
+    & .btn {
+      margin-block-start: auto;
+      }
+  }
+
+  /* L'offre qui contient un badge est mise en avant automatiquement */
+  .offer:has(.offer__badge) {
+    border-width: var(--border-strong);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .offer__badge {
+    align-self: flex-start;
+    padding: var(--gap-tight) var(--gap);
+    background-color: var(--color-tag);
+    color: var(--color-on-tag);
+    font-family: var(--font-meta);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .offer__price {
+    font-family: var(--font-display);
+    font-size: var(--font-size-h2);
+    line-height: 1;
+
+    & small {
+      font-size: var(--font-size-small);
+      color: var(--color-text-muted);
+    }
+  }
+
+  .offer__features {
+    display: grid;
+    gap: var(--gap-tight);
+
+    & li {
+      display: flex;
+      gap: var(--gap-tight);
+
+      &::before {
+        content: "→";
+        font-weight: 700;
+      }
+    }
+  }
+
+  /* FAQ */
+  .faq-item {
+    background-color: var(--color-surface-raised);
+    border: var(--border-ui) solid var(--color-border);
+
+    & summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--gap);
+      padding: var(--gap);
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "+";
+        flex-shrink: 0;
+        font-family: var(--font-display);
+        font-size: var(--font-size-h3);
+        line-height: 1;
+        transition: rotate var(--duration-open) var(--ease-default);
+      }
+    }
+
+    &[open] > summary::after {
+      rotate: 45deg;
+    }
+
+    & p {
+      padding: 0 var(--gap) var(--gap);
+      color: var(--color-text-muted);
+    }
+  }
+
+  /* Pied de page */
+  .footer-block {
+    display: grid;
+    gap: var(--gap-tight);
+    align-content: start;
+
+    /* Cible tactile d'au moins 24 × 24 px (WCAG 2.5.8) */
+    & a {
+      display: inline-block;
+      min-block-size: var(--target-min);
+      min-inline-size: var(--target-min);
+    }
+
+    & h2 {
+      font-size: var(--font-size-h3);
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-tight) var(--gap);
+  }
+
+  .footer-legal {
+    grid-column: 1 / -1;
+    padding-block-start: var(--gap);
+    border-block-start: var(--border-ui) solid var(--color-border);
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+  }
+
+  /* Animations — seul l'état « from » est décrit : sans animation, rien ne reste invisible */
+  @keyframes descend {
+    from {
+      opacity: 0;
+      translate: 0 -0.3em;
+    }
+  }
+
+  /* 2 éclats seulement : sous le seuil de 3 flashs/s (WCAG 2.3.1) */
+  @keyframes neon-on {
+    0%, 30% { opacity: 0.15; }
+    35% { opacity: 1; }
+    45%, 60% { opacity: 0.15; }
+    65%, 100% { opacity: 1; }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      scale: 0.94;
+    }
+  }
+
+  /* Scroll-driven : ignoré par Firefox, le contenu reste visible */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      :is(.day, .card, .offer) {
+        animation: rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+    }
+  }
+}
