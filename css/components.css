@@ -335,7 +335,7 @@
   @container card (inline-size > 30rem) {
     .card {
       grid-template-columns: minmax(var(--size-card-media), 2fr) 3fr;
-      grid-template-rows: auto auto 1fr;
+      grid-template-rows: auto 1fr auto;
 
       & .card__media {
         grid-row: 1 / -1;

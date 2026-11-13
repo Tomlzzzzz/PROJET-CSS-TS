@@ -126,7 +126,6 @@
   .featured {
     display: grid;
     gap: var(--gap-loose) var(--gap);
-    align-items: start;
 
     @media (width >= 48rem) {
       grid-template-columns: 2fr 1fr;
@@ -135,6 +134,12 @@
 
   .featured__item {
     container: card / inline-size;
+
+    /* Les deux cartes prennent la même hauteur, lien calé en bas */
+    & > .card {
+      block-size: 100%;
+      grid-template-rows: auto auto 1fr auto;
+    }
   }
 
   /* Billetterie */

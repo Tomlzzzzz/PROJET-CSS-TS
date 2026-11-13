@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Nom du groupe | sous-sol |
-| Membres (et rôle référent) | Sladojevic Thomas — travail individuel, les trois rôles |
+| Membres (et rôle référent) | NOM Prénom — travail individuel, les trois rôles |
 | Événement / thème | Festival de musique : « SOUS-SOL », festival de rap underground |
 | Lien du dépôt Git | https://github.com/Tomlzzzzz/PROJET-CSS-TS |
 | Convention de nommage | BEM : `.bloc`, `.bloc__element`, `.bloc--variante` ; utilitaires préfixés `u-` |
@@ -23,7 +23,7 @@
 | 2. Mise en page | Flexbox pour un composant | `css/components.css:40` | Navigation avec `flex-wrap` et `gap`. Raccourci `flex` `css/components.css:172`. |
 | 3. Responsive | Première media query mobile-first | `css/layout.css:40` | `@media (width >= 48rem)`. |
 | 3. Responsive | Typographie fluide `clamp()` | `css/tokens.css:68` | Échelle de tailles dans les tokens. |
-| 3. Responsive | Container query (`container-type` + `@container`) et ses 2 contextes | `css/layout.css:137` + `css/components.css:335` | Carte horizontale (tête d'affiche) ou verticale (révélation), côte à côte. |
+| 3. Responsive | Container query (`container-type` + `@container`) et ses 2 contextes | `css/layout.css:136` + `css/components.css:335` | Carte horizontale (tête d'affiche) ou verticale (révélation), côte à côte. |
 | 3. Responsive | Test 320 px sans défilement horizontal (correctif principal) | `css/reset.css:37` | `overflow-wrap: break-word`. |
 | 4. Sélecteurs | `:has()` pertinent | `css/components.css:369` | L'offre qui contient un badge est mise en avant. |
 | 4. Sélecteurs | `:is()` / `:where()` | `css/base.css:19` | Titres à spécificité nulle. |
@@ -62,14 +62,14 @@ Aucun.
 
 | Outil | Pour quoi faire (textes, explication d'une erreur, revue…) | Parties du code concernées |
 |---|---|---|
-| Claude | Textes fictifs, correction d'un bug de subgrid, calcul des contrastes, README | `index.html`, `css/`, `README.md` |
+| Claude (Anthropic) | Choix du thème, génération du code, textes fictifs, correction d'un bug de subgrid, calcul des contrastes, README | `index.html`, `css/`, `README.md` |
 | DiceBear | Génération des portraits des artistes | Images des cartes |
 
 ## Qui a fait quoi
 
 | Membre | Principales contributions |
 |---|---|
-| Sladojevic Thomas | Travail individuel : tout le projet, avec l'IA déclarée ci-dessus |
+| NOM Prénom | Travail individuel : tout le projet, avec l'IA déclarée ci-dessus |
 
 ## Crédits
 
